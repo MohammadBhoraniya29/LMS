@@ -37,7 +37,7 @@ const CourseVideo = () => {
       Ontario Security Training Masterclass
     </span>
   </div>
-
+  
   {/* Content for Time Spent, Review, Progress, and Back Button */}
   <div className="flex flex-col gap-2 sm:gap-4 w-full sm:w-auto md:flex-row md:items-center justify-between">
     {/* Time Spent */}
@@ -88,7 +88,7 @@ const CourseVideo = () => {
             <video controls className="video-element" poster={courseThumbnail}>
               <source
                 src="https://www.w3schools.com/html/mov_bbb.mp4" // Online video path
-                type="video/mp4"
+                type="video/mp4"   
               />
               Your browser does not support the video tag.
             </video>
