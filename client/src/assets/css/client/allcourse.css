@@ -22,18 +22,17 @@
 .course-category h3 {
   font-size: 22px;
   font-weight: 600;
-  padding-bottom: 14px;
+  margin-bottom: 15px;
   color: var(--black);
   font-family: var(--exo-ff);
 }
 
 .course-category label {
-  display: flex;
-  align-items: center;
+  display: block;
   color: var(--light-grey-text-color);
   font-family: var(--jost-ff);
   font-size: 18px;
-  line-height: 1.9em;
+  line-height: 1.4em;
   cursor: pointer;
   user-select: none;
 }
@@ -42,6 +41,7 @@
   margin-right: 8px;
   width: 16px;
   height: 16px;
+  vertical-align: middle;
 }
 
 .course-section-header {
@@ -130,6 +130,7 @@
 .course-details p {
   padding: 6px 0;
   width: 80%;
+  min-height: 54px;
 }
 
 .course-icon-section span {
@@ -158,6 +159,10 @@
 .add-to-cart-btn {
   font-size: 14px;
   padding: 4px 14px;
+}
+.add-to-cart-btn.disabled {
+  background-color: rgb(163, 160, 160);
+  cursor: not-allowed;
 }
 
 .security-button {
@@ -203,7 +208,9 @@
   font-size: 15px;
 }
 
-.author-and-rating .courses-reviews {
+.courses-reviews {
+  display: flex;
+  align-items: center;
   font-weight: 700;
 }
 
@@ -248,7 +255,7 @@
 .filter-button {
   background-color: var(--button-primary-color);
   color: var(--white);
-  padding: 10px 20px;
+  padding: 6px 15px;
   font-size: 20px;
   font-family: var(--jost-ff);
   cursor: pointer;

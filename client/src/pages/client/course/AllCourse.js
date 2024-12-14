@@ -4,6 +4,7 @@ import CourseList from "../component/CourseList";
 import CourseGrid from "../component/CourseGrid";
 import axiosInstance from "../utils/axiosInstance";
 import Footer from "../layout/Footer";
+// import { useCart } from "../layout/CartContext";
 
 const port = process.env.REACT_APP_URL;
 
@@ -25,12 +26,11 @@ const AllCourse = () => {
     try {
       const res = await axiosInstance.get(`${port}/gettingNotNullCourseCategory`);
       setCourseCategory(res.data);
-      console.log(res.data);
     } catch (error) {
       console.log(error);
     }
   };
-
+  // const { courseData } = useCart();
   // Get course data
   const [courseData, setCourseData] = useState();
   const getCourseData = async () => {
@@ -60,8 +60,8 @@ const AllCourse = () => {
   // Filter courses based on search query and selected categories
   const filteredCourses = courseData?.filter((course) => {
     const matchesSearchQuery =
-      course.course_title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      course.short_desc.toLowerCase().includes(searchQuery.toLowerCase());
+      course.course_title.toLowerCase().includes(searchQuery.toLowerCase().trim()) ||
+      course.short_desc.toLowerCase().includes(searchQuery.toLowerCase().trim());
 
     const matchesCategory =
       selectedCategories.length === 0 || selectedCategories.includes(course.course_cate);
@@ -126,7 +126,7 @@ const AllCourse = () => {
                 <input
                   type="checkbox"
                   value={item.id}
-                  onChange={handleCategoryChange} // Handle category selection
+                  onChange={handleCategoryChange}
                 />
                 {item.cate_title}
               </label>
