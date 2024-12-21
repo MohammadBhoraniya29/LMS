@@ -8,6 +8,6 @@ const ContactRoute = () => {
             <Route path='/contact-us' element={<Contact />} />
         </Routes>
     )
-}
+}  
 
 export default ContactRoute
